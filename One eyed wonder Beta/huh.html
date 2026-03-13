@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>One-Eyed Wonder</title>
+    <link rel="stylesheet" href="oh.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <div id="splash-screen" class="splash-overlay">
+            <h2 class="pixel-text">Ready?</h2>
+            <button id="entry-button">CLICK TO BEGIN</button>
+        </div>
+
+        <div id="main-menu" class="menu-overlay">
+            <div class="header-container">
+                <img src="cube.png" alt="One-Eye Cube" class="cube-image">
+                <h1 class="game-title">
+                    <span class="pixel-text">One-Eye</span> 
+                    <span class="calligraphy-text">Wonder</span>
+                </h1>
+            </div>
+
+            <div class="button-group">
+                <button onclick="startGame()">START GAME</button>
+                <button onclick="characterSelect()">CHARACTERS</button>
+                <button onclick="toggleSettings()">SETTINGS</button>
+                <button onclick="showCredits()">CREDITS</button>
+            </div>
+        </div>
+
+        <div id="level-select" class="menu-overlay" style="display: none; flex-direction: column; align-items: center;">
+            <h1 class="pixel-text" style="color: white; margin-bottom: 20px;">SELECT THE LEVEL</h1>
+            
+            <div class="button-group">
+                <button class="menu-btn" onclick="loadLevel(1)">LEVEL 1: THE OFFICE</button>
+                <button class="menu-btn" onclick="backToMain()">BACK</button>
+            </div>
+        </div>
+<div id="character-select" class="menu-overlay" style="display: none; flex-direction: column; align-items: center;">
+    <h1 class="pixel-text" style="color: white; margin-bottom: 20px;">CHOOSE YOUR HERO</h1>
+    
+    <div style="display: flex; gap: 40px; margin-bottom: 30px;">
+        <div class="char-card" onclick="selectHero('Xquic')">
+            <img src="Cube x sprite.png" class="char-preview">
+            <h3 class="pixel-text">XQUIC</h3>
+            <div class="stats">
+                <p>SPD: ★★★★☆</p>
+                <p>ATK: ★★★☆☆</p>
+            </div>
+            <p class="special-text">X DELETION</p>
+        </div>
+
+        <div class="char-card" onclick="selectHero('Arumaz')">
+            <img src="Alphabet sprite.png" class="char-preview">
+            <h3 class="pixel-text">ARUMAZ</h3>
+            <div class="stats">
+                <p>SPD: ★★★☆☆</p>
+                <p>ATK: ★★★★★</p>
+            </div>
+            <p class="special-text">SCREAMING CRIES</p>
+        </div>
+    </div>
+
+    <button class="menu-btn" onclick="backToMain()">BACK</button>
+</div>
+        <canvas id="game" width="1280" height="720"></canvas>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    <script src="oh no.js"></script>
+</body>
+</html>
